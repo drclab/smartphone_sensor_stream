@@ -16,5 +16,6 @@ class AppConfig(BaseSettings):
     @validator("KAFKA_URL", pre=True, always=True)
     def set_kafka_url(cls, v, values, **kwargs):
         return values['KAFKA_HOST'] + ":" + values['KAFKA_PORT'] 
-
+# Configuration for the producer is handled through 
+# environment variables (in .env file) that are read in by a Pydantic BaseSettings object:
 app_config = AppConfig()

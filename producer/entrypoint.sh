@@ -6,4 +6,4 @@ done
 
 echo "Kafka started"
 
-exec "$@"
+exec "$@" #exec replace CMD in base image
