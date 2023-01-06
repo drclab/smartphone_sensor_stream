@@ -24,6 +24,9 @@ async def startup_event():
 async def shutdown_event():
     await producer.stop()
 
+#The FastAPI route writes a raw request body directly to the Kafka topic (in line 45), 
+# and metadata is logged and returned in lines 47–55. This route is exposed 
+# at http://{your_ip_address}:8000/phone-producer
 @app.post("/phone-producer/")
 async def kafka_produce(data: SensorReading):
 
