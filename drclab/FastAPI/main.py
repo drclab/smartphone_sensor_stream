@@ -7,5 +7,5 @@ def root():
     return "Dulun Research & Consulting"
 
 @app.get('/item/{id}')
-def read_item(id: Int):
+def read_item(id: int):
     return id
