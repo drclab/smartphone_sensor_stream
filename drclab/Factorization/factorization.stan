@@ -8,3 +8,17 @@ data {
     real<lower=0> beta_sigma;
     reak<lower=0> y_sigma;
 }
+
+parameters {
+    /* ... declarations ... */
+    vector[N] g1_betas; 
+    vector[J] g2_betas;
+    matrix[N, K] gammas; // group 1 factor
+    matrix[J, K] deltas; // group 2 factors
+}
+
+transformed parameters {
+    /* ... declarations ... statements ... */
+    real linear_predictors[(N*J)];
+    
+}
