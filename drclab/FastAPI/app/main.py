@@ -5,7 +5,7 @@ app = FastAPI()
 app.include_router(item_router)
 
 @app.get('/')
-def root():
+async def root():
     return {'Company': "Dulun Research & Consulting"}
 
 # @app.get('/item/{id}')
