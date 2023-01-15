@@ -6,7 +6,7 @@ app.include_router(item_router)
 
 @app.get('/')
 def root():
-    return "Dulun Research & Consulting"
+    return {'Company': "Dulun Research & Consulting"}
 
 # @app.get('/item/{id}')
 # def read_item(id: int):
