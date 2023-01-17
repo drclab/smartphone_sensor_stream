@@ -20,5 +20,14 @@ parameters {
 transformed parameters {
     /* ... declarations ... statements ... */
     real linear_predictors[(N*J)];
+    for (i in 1: N*J){
+        linear_predictors[i] = g1_betas[X[i,1]] + g2_betas[X[i,2]] + (gammas[X[i,1]] * deltas[X[i,2]]')
+    }
+}
+
+model {
+   /* ... declarations ... statements ... */
+    g1_betas ~ normal(0, beta_sigma)
+    g2_betas ~ normal(0, beta_sigma)
     
 }
